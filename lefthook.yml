@@ -1,5 +1,8 @@
 pre-commit:
   commands:
+    format:
+      run: pnpm prettier {staged_files} --write
+      stage_fixed: true
     lint:
       run: pnpm eslint {staged_files} --fix
       stage_fixed: true
