@@ -5,10 +5,10 @@ import {
   createRootRoute,
 } from "@tanstack/react-router";
 import { Meta, Scripts } from "@tanstack/start";
-import type { ReactNode } from "react";
 import React, { Suspense } from "react";
 
 import appCss from "../styles/index.css?url";
+import type { ReactNode } from "react";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -56,7 +56,7 @@ function RootComponent() {
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html>
+    <html lang="en">
       <head>
         <Meta />
       </head>
