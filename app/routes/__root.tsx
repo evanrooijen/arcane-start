@@ -10,12 +10,41 @@ import React, { Suspense } from "react";
 import appCss from "../styles/index.css?url";
 import type { ReactNode } from "react";
 
+const NotFoundComponent = () => <div>Not Found</div>;
+
 export const Route = createRootRoute({
   head: () => ({
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        href: "/favicon-16.png",
+        sizes: "16x16",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        href: "/favicon-32.png",
+        sizes: "32x32",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        href: "/favicon-48.png",
+        sizes: "48x48",
+      },
+      {
+        rel: "manifest",
+        href: "/manifest.json",
+      },
+      {
+        rel: "apple-touch-icon",
+        href: "/apple-touch-icon.png",
+        sizes: "180x180",
       },
     ],
     meta: [
@@ -29,9 +58,18 @@ export const Route = createRootRoute({
       {
         title: "TanStack Start Starter",
       },
+      {
+        name: "theme-color",
+        content: "#000000",
+      },
+      {
+        name: "msapplication-TileColor",
+        content: "#000000",
+      },
     ],
   }),
   component: RootComponent,
+  notFoundComponent: NotFoundComponent,
 });
 
 const TanStackRouterDevtools =
@@ -43,7 +81,7 @@ const TanStackRouterDevtools =
           default: res.TanStackRouterDevtools,
           // For Embedded Mode
           // default: res.TanStackRouterDevtoolsPanel
-        }))
+        })),
       );
 
 function RootComponent() {
