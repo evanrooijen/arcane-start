@@ -12,11 +12,13 @@ COPY . /app
 COPY --from=base /app/node_modules /app/node_modules
 RUN pnpm run build
 
-FROM node:20-slim AS runtime
+FROM cgr.dev/chainguard/node
+ENV NODE_ENV=production
+
 LABEL org.opencontainers.image.source=https://github.com/evanrooijen/arcane-start
 
 WORKDIR /app
-COPY --from=builder /app/.output /app/.output
+COPY --from=builder --chown=node:node /app/.output /app/.output
 
 EXPOSE 3000
-CMD [ "node", ".output/server/index.mjs" ]
+CMD [ ".output/server/index.mjs" ]
