@@ -7,7 +7,7 @@ import {
 import { Meta, Scripts } from "@tanstack/start";
 import React, { Suspense } from "react";
 
-import appCss from "../styles/index.css?url";
+import styles from "../styles/index.css?inline";
 import type { ReactNode } from "react";
 
 const NotFoundComponent = () => <div>Not Found</div>;
@@ -15,10 +15,6 @@ const NotFoundComponent = () => <div>Not Found</div>;
 export const Route = createRootRoute({
   head: () => ({
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
       {
         rel: "icon",
         type: "image/png",
@@ -97,6 +93,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
     <html lang="en">
       <head>
         <Meta />
+        <style>{styles}</style>
       </head>
       <body className="antialiased dark:bg-zinc-900 dark:text-white">
         <Suspense>
