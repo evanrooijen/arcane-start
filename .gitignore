@@ -4,3 +4,6 @@ node_modules
 .output
 
 count.txt
+
+.env*
+!*.env.example

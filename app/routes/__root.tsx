@@ -10,8 +10,6 @@ import React, { Suspense } from "react";
 import styles from "../styles/index.css?inline";
 import type { ReactNode } from "react";
 
-const NotFoundComponent = () => <div>Not Found</div>;
-
 export const Route = createRootRoute({
   head: () => ({
     links: [
@@ -65,7 +63,6 @@ export const Route = createRootRoute({
     ],
   }),
   component: RootComponent,
-  notFoundComponent: NotFoundComponent,
 });
 
 const TanStackRouterDevtools =
