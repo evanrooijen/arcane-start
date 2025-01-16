@@ -25,6 +25,7 @@
     "vinxi": "^0.5.1"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.2.5",
     "@tailwindcss/postcss": "4.0.0-beta.9",
     "@tanstack/config": "^0.15.0",
     "@tanstack/router-devtools": "^1.95.1",

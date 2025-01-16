@@ -1,10 +1,19 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { tanstackConfig } from "@tanstack/config/eslint";
+import eslintPluginJsxA11y from "eslint-plugin-jsx-a11y";
 import reactPlugin from "eslint-plugin-react";
 import hooksPlugin from "eslint-plugin-react-hooks";
-import eslintPluginJsxA11y from "eslint-plugin-jsx-a11y";
 import reactRefresh from "eslint-plugin-react-refresh";
 
+import { includeIgnoreFile } from "@eslint/compat";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const gitignorePath = path.resolve(__dirname, ".gitignore");
+
 export default [
+  includeIgnoreFile(gitignorePath),
   {
     settings: {
       react: {
@@ -25,6 +34,6 @@ export default [
   },
   {
     // Custom rules go here
-    ignores: [".output/*", ".vinxi/*"],
+    ignores: ["eslint.config.js"],
   },
 ];
