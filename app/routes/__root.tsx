@@ -87,14 +87,14 @@ function RootComponent() {
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <Meta />
         <style>{styles}</style>
       </head>
       <body className="antialiased dark:bg-zinc-900 dark:text-white">
         <Suspense>
-          <TanStackRouterDevtools />
+          <TanStackRouterDevtools position="bottom-right" />
         </Suspense>
         {children}
         <ScrollRestoration />

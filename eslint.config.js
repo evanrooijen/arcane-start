@@ -25,12 +25,15 @@ export default [
   reactPlugin.configs.flat.recommended,
   reactPlugin.configs.flat["jsx-runtime"],
   eslintPluginJsxA11y.flatConfigs.recommended,
-  reactRefresh.configs.vite,
   {
     plugins: {
       "react-hooks": hooksPlugin,
+      "react-refresh": reactRefresh,
     },
-    rules: hooksPlugin.configs.recommended.rules,
+    rules: {
+      ...hooksPlugin.configs.recommended.rules,
+      "react-refresh/only-export-components": "warn",
+    },
   },
   {
     // Custom rules go here

@@ -1,7 +1,8 @@
 // app/routes/index.tsx
 import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/start";
-import { prisma } from "../lib/db/client";
+import { prisma } from "@/lib/db/client";
+import { Button } from "@/components/ui/button";
 
 async function readCount() {
   const count = await prisma.character.count();
@@ -37,7 +38,7 @@ const updateCount = createServerFn({ method: "POST" })
     });
   });
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/_layout/")({
   component: Home,
   loader: async () => {
     const count = await getCount();
@@ -52,7 +53,7 @@ function Home() {
 
   return (
     <>
-      <button
+      <Button
         type="button"
         onClick={() => {
           updateCount({ data: 1 }).then(() => {
@@ -61,7 +62,7 @@ function Home() {
         }}
       >
         Add 1 to {state.count}?
-      </button>
+      </Button>
       <ul>
         {state.characters.map((character) => (
           <li key={character.id}>{character.name}</li>
