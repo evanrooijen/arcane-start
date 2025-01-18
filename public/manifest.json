@@ -1,6 +1,9 @@
 {
+  "$schema": "https://json.schemastore.org/web-manifest",
   "name": "Arcane",
   "short_name": "arcane",
+  "start_url": "/",
+  "lang": "en",
   "icons": [
     {
       "src": "/android-chrome-192.png",
