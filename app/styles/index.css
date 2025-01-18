@@ -63,3 +63,9 @@
   --sidebar-border: var(--sidebar-border);
   --sidebar-ring: var(--sidebar-ring);
 }
+
+@layer base {
+  html {
+    scrollbar-gutter: stable;
+  }
+}

@@ -1,3 +1,5 @@
 .dockerignore
 .prettierignore
 Dockerfile
+
+**/*.gen.ts

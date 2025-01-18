@@ -1,4 +1,5 @@
 import { Outlet, createFileRoute } from "@tanstack/react-router";
+import MainMenu from "@/components/main-menu";
 
 export const Route = createFileRoute("/_layout")({
   component: RouteComponent,
@@ -6,8 +7,11 @@ export const Route = createFileRoute("/_layout")({
 
 function RouteComponent() {
   return (
-    <main className="container mx-auto">
-      <Outlet />
-    </main>
+    <>
+      <MainMenu />
+      <main className="container mx-auto">
+        <Outlet />
+      </main>
+    </>
   );
 }

@@ -37,6 +37,6 @@ export default [
   },
   {
     // Custom rules go here
-    ignores: ["eslint.config.js"],
+    ignores: ["eslint.config.js", "**/*.gen.ts"],
   },
 ];
