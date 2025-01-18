@@ -11,7 +11,6 @@ FROM base AS builder
 COPY . /app
 COPY --from=base /app/node_modules /app/node_modules
 
-RUN pnpm prisma generate --no-engine
 RUN pnpm run build
 
 FROM cgr.dev/chainguard/node
